@@ -4,7 +4,7 @@ export function DeckSelector({ onSelect, selectedDeck }: { onSelect: (deck: stri
   const [decks, setDecks] = useState<string[]>([]);
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_BACKEND_URL}/deck')
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/deck`)
       .then(res => res.json())
       .then(data => setDecks(data.decks))
       .catch(err => console.error(err));
